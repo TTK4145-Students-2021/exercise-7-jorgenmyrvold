@@ -44,7 +44,6 @@ func Transmitter(port int, chans ...interface{}) {
 // sends the decoded value on the corresponding channel
 func Receiver(port int, chans ...interface{}) {
 	checkArgs(chans...)
-
 	var buf [1024]byte
 	conn := conn.DialBroadcastUDP(port)
 	defer conn.Close()
